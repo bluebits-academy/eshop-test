@@ -1,0 +1,53 @@
+{
+  "npmScope": "bluebits",
+  "affected": {
+    "defaultBase": "master"
+  },
+  "implicitDependencies": {
+    "angular.json": "*",
+    "package.json": {
+      "dependencies": "*",
+      "devDependencies": "*"
+    },
+    "tsconfig.base.json": "*",
+    "tslint.json": "*",
+    ".eslintrc.json": "*",
+    "nx.json": "*"
+  },
+  "tasksRunnerOptions": {
+    "default": {
+      "runner": "@nrwl/workspace/tasks-runners/default",
+      "options": {
+        "cacheableOperations": ["build", "lint", "test", "e2e"]
+      }
+    }
+  },
+  "projects": {
+    "ngshop": {
+      "tags": ["scope: client"]
+    },
+    "ngshop-e2e": {
+      "tags": ["scope: client"],
+      "implicitDependencies": ["ngshop"]
+    },
+    "admin": {
+      "tags": ["scope: client"]
+    },
+    "admin-e2e": {
+      "tags": ["scope: client"],
+      "implicitDependencies": ["admin"]
+    },
+    "orders": {
+      "tags": ["scope:orders"]
+    },
+    "products": {
+      "tags": ["scope:products"]
+    },
+    "users": {
+      "tags": ["scope:users"]
+    },
+    "ui": {
+      "tags": []
+    }
+  }
+}
